@@ -39,10 +39,23 @@ function addRecord() {
   records.push(record);
   localStorage.setItem("records", JSON.stringify(records));
 
-  function render()
+  function render() {
+  const table = document.getElementById("records");
+  table.innerHTML = "";
 
-  document.getElementById("desc").value = "";
-  document.getElementById("amount").value = "";
+  records.forEach(r => {
+    const row = `
+      <tr>
+        <td>${r.date || ""}</td>
+        <td>${r.item}</td>
+        <td>${r.type}</td>
+        <td>${r.desc}</td>
+        <td>$${r.amount}</td>
+      </tr>
+    `;
+    table.innerHTML += row;
+  });
 }
+
 
 render();

@@ -39,7 +39,7 @@ function addRecord() {
   records.push(record);
   localStorage.setItem("records", JSON.stringify(records));
 
-  render();
+  function render()
 
   document.getElementById("desc").value = "";
   document.getElementById("amount").value = "";

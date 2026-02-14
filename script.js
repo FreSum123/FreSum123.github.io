@@ -28,7 +28,13 @@ function addRecord() {
     return;
   }
 
-  const record = { item, type, desc, amount };
+  const record = {
+  item,
+  type,
+  desc,
+  amount,
+  date: new Date().toLocaleDateString()
+};
 
   records.push(record);
   localStorage.setItem("records", JSON.stringify(records));

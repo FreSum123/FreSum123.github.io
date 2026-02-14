@@ -1,38 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My Website</title>
+  <title>Maintenance Tracker</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <header>
-    <h1>Welcome to My Website</h1>
-    <p>Built and hosted with GitHub Pages 🚀</p>
-  </header>
+<h1>Maintenance & Expense Tracker</h1>
 
-  <main>
-    <section class="card">
-      <h2>About Me</h2>
-      <p>This is my first website. I made it myself!</p>
-    </section>
+<div class="card">
+  <h2>Add Record</h2>
 
-    <section class="card">
-      <h2>My Projects</h2>
-      <p>More cool stuff coming soon.</p>
-    </section>
-  </main>
+  <label>Item</label>
+  <select id="item">
+    <option>Car</option>
+    <option>Scooter</option>
+    <option>Other</option>
+  </select>
 
-  <footer>
-    <p>© 2026 My Name Sumfre KLW </p>
-  </footer>
+  <label>Type</label>
+  <select id="type">
+    <option>Service</option>
+    <option>Fuel</option>
+    <option>Repair</option>
+  </select>
 
+  <label>Description</label>
+  <input id="desc" placeholder="Oil change / Petrol">
+
+  <label>Amount ($)</label>
+  <input id="amount" type="number">
+
+  <button onclick="addRecord()">Save</button>
+</div>
+
+<div class="card">
+  <h2>History</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Amount</th>
+      </tr>
+    </thead>
+    <tbody id="records"></tbody>
+  </table>
+</div>
+
+<script src="script.js"></script>
 </body>
-</html>
-<html>
-  <body>
-    <h1>Welcome to my Helpful website for ur needs!</h1>
-    <p>This is a basic website hosted on GitHub Pages.</p>
-  </body>
 </html>

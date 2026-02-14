@@ -42,11 +42,24 @@ function addRecord() {
 
   records.push(record);
   localStorage.setItem("records", JSON.stringify(records));
-  render();
+  function render() {
+  const table = document.getElementById("records");
+  if (!table) return;
 
-  document.getElementById("desc").value = "";
-  document.getElementById("amount").value = "";
+  table.innerHTML = "";
+
+  records.forEach(r => {
+    const date = r.date ? r.date : "";
+
+    table.innerHTML += `
+      <tr>
+        <td>${date}</td>
+        <td>${r.item}</td>
+        <td>${r.type}</td>
+        <td>${r.desc}</td>
+        <td>$${r.amount}</td>
+      </tr>
+    `;
+  });
 }
 
-// Show saved data when page loads
-render();
